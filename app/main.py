@@ -3,15 +3,15 @@
 from datetime import date
 
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class EventInput(BaseModel):
     """Dados enviados pelo cliente ao cadastrar um evento."""
 
-    title: str
+    title: str = Field(min_length=1)
     date: date
-    capacity: int
+    capacity: int = Field(gt=0)
 
 
 def create_app() -> FastAPI:
@@ -35,7 +35,19 @@ def create_app() -> FastAPI:
         # Atividade 1: valide título e capacidade, gere um ID e guarde o
         # evento em `events`. A resposta deve conter id, title, date e capacity.
         # Os testes mostram os casos de sucesso e de entrada inválida.
-        raise HTTPException(status_code=501, detail="Cadastro ainda não implementado")
+        if events:
+            event_id = max(events) + 1
+        else:
+            event_id = 1
+
+        event = {
+            "id": event_id,
+            "title": data.title,
+            "date": data.date,
+            "capacity": data.capacity,
+    }
+        events[event_id] = event
+        return event
 
     return app
 
