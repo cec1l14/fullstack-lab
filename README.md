@@ -1,6 +1,6 @@
 # Laboratório Full Stack — Trilha
 
-Você vai construir um sistema de eventos ao longo de quatro atividades para casa. Cada atualização acrescenta material ao **mesmo projeto**. A atividade atual é [Checkpoint 01 — Cadastrar eventos pela API](docs/checkpoint-01.md).
+Você vai construir um sistema de eventos ao longo de quatro atividades para casa. Cada atualização acrescenta material ao **mesmo projeto**. A atividade atual é [Checkpoint 02 — Modelar inscrições no banco](docs/checkpoint-02.md).
 
 ## O que precisa instalar
 
@@ -9,7 +9,7 @@ Você vai construir um sistema de eventos ao longo de quatro atividades para cas
 - Git
 - Uma conta no GitHub
 
-Node.js será necessário quando o frontend chegar. Você não precisa configurar banco de dados nesta primeira atividade.
+Node.js será necessário quando o frontend chegar. O SQLite é criado pelo projeto: não há servidor de banco para instalar.
 
 ## Primeiro acesso
 
@@ -55,8 +55,9 @@ Abra `http://127.0.0.1:8000/docs` para testar as rotas pelo navegador. Pare o se
 4. Faça commit e push na branch `aluno`:
 
 ```bash
-git add app
-git commit -m "Implementa cadastro de eventos"
+git add -A
+git status --short
+git commit -m "Conclui checkpoint"
 git push origin aluno
 ```
 
